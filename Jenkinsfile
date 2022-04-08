@@ -5,7 +5,7 @@ node{
     dir('BuildQuality'){
         stage('Preparation'){
                         
-            git 'https://github.com/devopsevd/simple-spring.git'
+            git 'https://github.com/devopsevd/jenkins-selenium-int-testing.git'
             mvnHome = tool 'Maven'
         }
 
