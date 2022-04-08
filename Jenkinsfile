@@ -6,13 +6,14 @@ node{
         stage('Preparation'){
                         
             git 'https://github.com/devopsevd/jenkins-selenium-int-testing.git'
-            mvnHome = tool 'M3'
+            mvnHome = tool 'Maven'
         }
 
         stage('Build') {
             // Run the maven build
             if (isUnix()) {
-                sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+               // sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+                sh 'mvn -B -DskipTests clean package'
             } else {
                 bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
             }
