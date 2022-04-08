@@ -9,7 +9,7 @@ node{
             mvnHome = tool 'Maven'
         }
 
-        stage('Build') {
+        /*stage('Build') {
             // Run the maven build
             
                   sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
@@ -17,7 +17,7 @@ node{
             } else {
                 bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
             }
-        }
+        }*/
         
         stage('SonarQube Analysis') { 
            // def mvnHome
