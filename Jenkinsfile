@@ -11,16 +11,12 @@ node{
 
         stage('Build') {
             // Run the maven build
-            sh 'mvn -B -DskipTests clean package'
-            /*if (isUnix()) {
-               withEnv( ["PATH+MAVEN=${mvnHome}/bin"] ) {
+            
                   sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-                }
-               
-                sh 'mvn -B -DskipTests clean package'
+            if (isUnix()) {
             } else {
                 bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
-            }*/
+            }
         }
         
         stage('SonarQube Analysis') { 
