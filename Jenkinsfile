@@ -12,7 +12,10 @@ node{
         stage('Build') {
             // Run the maven build
             if (isUnix()) {
-               // sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+               withEnv( ["PATH+MAVEN=${mvnHome}/bin"] ) {
+                  sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+                }
+               
                 sh 'mvn -B -DskipTests clean package'
             } else {
                 bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
