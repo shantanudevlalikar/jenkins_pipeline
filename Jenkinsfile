@@ -6,7 +6,7 @@ node{
         stage('Preparation'){
                         
             git 'https://github.com/devopsevd/jenkins-selenium-int-testing.git'
-            mvnHome = tool 'Maven'
+            mvnHome = tool 'maven_home'
         }
 
         stage('Build') {
