@@ -5,8 +5,8 @@ node{
     dir('BuildQuality'){
         stage('Preparation'){
                         
-            git 'https://github.com/devopsevd/jenkins-selenium-int-testing.git'
-            mvnHome = tool 'M3'
+            git 'https://github.com/shantanudevlalikar/simple-spring.git'
+            mvnHome = tool 'Maven'
         }
 
         stage('Build') {
@@ -60,7 +60,7 @@ node{
     dir('FunctionalTests'){
 
         stage('Get Functional Test Scripts'){                        
-            git 'https://github.com/devopsevd/jenkins-selenium-int-testing.git'
+            git 'https://github.com/shantanudevlalikar/jenkins-selenium-int-testing.git'
             mvnHome = tool 'Maven'
         }
 
